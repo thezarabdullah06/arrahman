@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Penjaga Anak-Anak - Memberikan Harapan, Membangun Masa Depan</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #c0392b;
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            border-bottom: #3498db 3px solid;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            float: left;
+            margin-left: 20px;
+        }
+        header .logo h1 {
+            margin: 0;
+            color: #fff;
+        }
+        header nav {
+            float: right;
+            margin-right: 20px;
+        }
+        header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 15px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header a:hover {
+            color: #3498db;
+            text-decoration: none;
+        }
+        header .cta-btn {
+            background: #e74c3c;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        header .cta-btn:hover {
+            background: #c0392b;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 400px;
+            background: url('https://via.placeholder.com/1500x500/3498db/ffffff?text=Anak-anak+Ceria') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+        #hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .section-content .item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .section-content .item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Impact Section */
+        #dampak .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #dampak .stat-item {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+        }
+        #dampak .stat-item .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        #dampak .stat-item .label {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* CTA Section */
+        #cta-bottom {
+            background: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        #cta-bottom h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2.8em;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+        }
+        footer .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+
+        /* Specific Page Styles (e.g., Program Page) */
+        .program-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .program-detail .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        .program-detail .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .program-detail .sidebar h3 {
+            margin-top: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .logo, header nav {
+                float: none;
+                text-align: center;
+            }
+            header nav ul {
+                margin-top: 10px;
+            }
+            header li {
+                display: block;
+                padding: 8px 0;
+            }
+            #hero h2 {
+                font-size: 2em;
+            }
+            #hero p {
+                font-size: 1em;
+            }
+            .section-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            #dampak .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            #dampak .stat-item {
+                width: 80%;
+            }
+            .program-detail {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">YAYASAN PENJAGA ANAK</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="#tentang-kami">Tentang Kami</a></li>
+                    <li><a href="#program-kami">Program Kami</a></li>
+                    <li><a href="#dampak-kami">Dampak Kami</a></li>
+                    <li><a href="#bantu-kami">Cara Membantu</a></li>
+                    <li><a href="#berita">Berita & Cerita</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="#bantu-kami" class="cta-btn">Donasi Sekarang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Memberikan Harapan, Membangun Masa Depan untuk Anak-Anak yang Membutuhkan</h2>
+            <p>Yayasan kami berdedikasi untuk memberikan perlindungan, pendidikan, dan masa depan yang cerah bagi setiap anak.</p>
+            <a href="#tentang-kami" class="btn">Pelajari Lebih Lanjut</a>
+            <a href="#bantu-kami" class="btn" style="margin-left: 15px; background: #3498db;">Donasi Sekarang</a>
+        </div>
+    </section>
+
+    <section id="tentang-kami" class="container">
+        <h2>Tentang Kami</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">Yayasan Penjaga Anak-Anak adalah organisasi nirlaba yang berkomitmen untuk meningkatkan kualitas hidup anak-anak yang rentan melalui program pendidikan, kesehatan, dan perlindungan. Kami percaya bahwa setiap anak berhak mendapatkan kesempatan terbaik untuk tumbuh dan berkembang.</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#program-kami" class="btn">Lihat Misi Kami</a>
+        </div>
+    </section>
+
+    <section id="program-kami">
+        <div class="container">
+            <h2>Program Kami</h2>
+            <div class="section-content">
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Pendidikan" alt="Program Pendidikan">
+                    <h3>Program Pendidikan</h3>
+                    <p>Memberikan akses pendidikan berkualitas dan beasiswa bagi anak-anak kurang mampu.</p>
+                    <a href="#" class="btn" onclick="showProgramDetail('pendidikan')">Pelajari Lebih Lanjut</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Kesehatan" alt="Program Kesehatan">
+                    <h3>Program Kesehatan</h3>
+                    <p>Menyediakan layanan kesehatan dasar dan nutrisi untuk anak-anak.</p>
+                    <a href="#" class="btn" onclick="showProgramDetail('kesehatan')">Pelajari Lebih Lanjut</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Perlindungan" alt="Program Perlindungan">
+                    <h3>Program Perlindungan Anak</h3>
+                    <p>Melindungi anak-anak dari kekerasan, penelantaran, dan eksploitasi.</p>
+                    <a href="#" class="btn" onclick="showProgramDetail('perlindungan')">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dampak-kami">
+        <div class="container">
+            <h2>Dampak Kami</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Dengan dukungan Anda, kami telah menciptakan perbedaan nyata dalam kehidupan ribuan anak.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="number">1200+</div>
+                    <div class="label">Anak Terbantu</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">50+</div>
+                    <div class="label">Program Berjalan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">200+</div>
+                    <div class="label">Sukarelawan Aktif</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px;"><a href="#" class="btn">Lihat Laporan Dampak Lengkap</a></p>
+        </div>
+    </section>
+
+    <section id="bantu-kami">
+        <div class="container">
+            <h2>Cara Anda Dapat Membantu</h2>
+            <div class="section-content">
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Donasi" alt="Donasi">
+                    <h3>Donasi Sekarang</h3>
+                    <p>Setiap donasi, besar atau kecil, sangat berarti untuk masa depan anak-anak.</p>
+                    <a href="#" class="btn">Berikan Donasi</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Sukarelawan" alt="Sukarelawan">
+                    <h3>Jadi Sukarelawan</h3>
+                    <p>Bergabunglah dengan tim kami dan sumbangkan waktu serta keahlian Anda.</p>
+                    <a href="#" class="btn">Daftar Sukarelawan</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Mitra" alt="Kemitraan">
+                    <h3>Jalin Kemitraan</h3>
+                    <p>Bersama-sama, kita bisa mencapai dampak yang lebih besar.</p>
+                    <a href="#" class="btn">Info Kemitraan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="berita">
+        <div class="container">
+            <h2>Berita & Cerita Terbaru</h2>
+            <div class="section-content">
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Artikel+1" alt="Berita 1">
+                    <h3>Kisah Inspiratif: Beasiswa Mengubah Hidup Nina</h3>
+                    <p>Baca bagaimana dukungan Anda memungkinkan Nina melanjutkan sekolah dan meraih mimpinya.</p>
+                    <a href="#" class="btn">Baca Lebih Lanjut</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Artikel+2" alt="Berita 2">
+                    <h3>Event Komunitas: Ceria Bersama Anak Yatim Piatu</h3>
+                    <p>Laporan keseruan acara kebersamaan kami yang baru saja diadakan.</p>
+                    <a href="#" class="btn">Baca Lebih Lanjut</a>
+                </div>
+                <div class="item">
+                    <img src="https://via.placeholder.com/300x200?text=Artikel+3" alt="Berita 3">
+                    <h3>Workshop Pencegahan Bullying untuk Remaja</h3>
+                    <p>Program edukasi kami untuk menciptakan lingkungan sekolah yang aman.</p>
+                    <a href="#" class="btn">Baca Lebih Lanjut</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="btn" style="background: #3498db;">Lihat Semua Berita & Cerita</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-bottom">
+        <div class="container">
+            <h2>Dukungan Anda Membuat Perbedaan Nyata!</h2>
+            <p>Setiap tindakan kecil dari Anda dapat membawa dampak besar bagi masa depan anak-anak.</p>
+            <a href="#bantu-kami" class="btn" style="background: #e74c3c;">Donasi Sekarang</a>
+            <a href="#bantu-kami" class="btn" style="background: #27ae60; margin-left: 15px;">Bergabung Sebagai Sukarelawan</a>
+        </div>
+    </section>
+
+    <section id="kontak">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p style="text-align: center; max-width: 600px; margin: auto;">Kami selalu senang mendengar dari Anda. Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin berdiskusi lebih lanjut.</p>
+            <div class="section-content" style="margin-top: 30px;">
+                <div class="item" style="flex: 1; min-width: unset; max-width: unset;">
+                    <h3>Kantor Pusat</h3>
+                    <p>Jl. Contoh No. 123, Kota Harapan, 12345</p>
+                    <p>Telepon: (021) 123-4567</p>
+                    <p>Email: <a href="mailto:info@yayasananak.org">info@yayasananak.org</a></p>
+                </div>
+                <div class="item" style="flex: 2; min-width: unset; max-width: unset;">
+                    <h3>Kirim Pesan</h3>
+                    <form action="#" method="POST" style="text-align: left;">
+                        <p><label for="nama">Nama Lengkap:</label><br>
+                        <input type="text" id="nama" name="nama" style="width: 95%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;" required></p>
+                        <p><label for="email">Email Anda:</label><br>
+                        <input type="email" id="email" name="email" style="width: 95%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;" required></p>
+                        <p><label for="pesan">Pesan Anda:</label><br>
+                        <textarea id="pesan" name="pesan" rows="5" style="width: 95%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;" required></textarea></p>
+                        <button type="submit" class="btn" style="background: #27ae60;">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.529267026743!2d106.8241088147743!3d-6.17511009552174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d3422d0b7b%3A0x8f7d9c6e3d2c7b5a!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1625478901234!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Beranda</a> |
+                <a href="#tentang-kami">Tentang Kami</a> |
+                <a href="#program-kami">Program</a> |
+                <a href="#dampak-kami">Dampak</a> |
+                <a href="#bantu-kami">Donasi</a> |
+                <a href="#kontak">Kontak</a> |
+                <a href="#">Kebijakan Privasi</a>
+            </div>
+            <div class="social-icons" style="margin-top: 15px;">
+                <a href="#"><img src="https://via.placeholder.com/24x24?text=FB" alt="Facebook"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24?text=IG" alt="Instagram"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24?text=TW" alt="Twitter"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24?text=LI" alt="LinkedIn"></a>
+            </div>
+            <p style="margin-top: 20px;">&copy; 2023 Yayasan Penjaga Anak-Anak. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showProgramDetail(programId) {
+            alert('Anda mengklik detail program ' + programId + '. Dalam implementasi nyata, ini akan mengarahkan ke halaman detail program atau menampilkan modal.');
+            // window.location.href = 'program-detail.html?id=' + programId; // Example for actual navigation
+        }
+
+        // Example for sticky header (CSS already does most of it, but JS can add class for effects)
+        window.onscroll = function() {myFunction()};
+
+        var header = document.querySelector("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky"); // Add a class for potential styling changes on scroll
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+    </script>
+</body>
+</html>
