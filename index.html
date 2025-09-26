@@ -13,6 +13,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f4;
+            padding-top: 80px; /* Jarak atas untuk menghindari konten tertutup header fixed */
         }
         .container {
             width: 90%;
@@ -27,33 +28,39 @@
         a {
             color: #3498db;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            color: #2980b9;
         }
         .btn {
             display: inline-block;
             background: #e74c3c;
             color: #fff;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 50px; /* Bentuk tombol lebih modern */
             text-decoration: none;
             margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
             background: #c0392b;
             text-decoration: none;
         }
 
-        /* Header */
+        /* Header - Perubahan Utama di sini */
         header {
             background: #2c3e50;
             color: #fff;
             padding: 1rem 0;
-            border-bottom: #3498db 3px solid;
-            position: sticky;
+            position: fixed; /* Membuat header tetap di posisi atas */
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Efek shadow untuk tampilan mengambang */
+            transition: padding 0.3s ease, background-color 0.3s ease;
         }
         header .logo {
             float: left;
@@ -61,7 +68,14 @@
         }
         header .logo h1 {
             margin: 0;
+            font-size: 24px;
+        }
+        header .logo a {
             color: #fff;
+            transition: color 0.3s ease;
+        }
+        header .logo a:hover {
+            color: #3498db;
         }
         header nav {
             float: right;
@@ -73,23 +87,25 @@
             list-style: none;
         }
         header li {
-            display: inline;
+            display: inline-block; /* Mengubah dari inline untuk kontrol yang lebih baik */
             padding: 0 15px;
         }
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 16px;
+            font-size: 14px; /* Ukuran font lebih kecil agar pas */
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         header a:hover {
             color: #3498db;
-            text-decoration: none;
         }
         header .cta-btn {
             background: #e74c3c;
             padding: 8px 15px;
-            border-radius: 5px;
+            border-radius: 50px;
+            transition: background 0.3s ease;
         }
         header .cta-btn:hover {
             background: #c0392b;
@@ -107,11 +123,13 @@
             justify-content: center;
             flex-direction: column;
             padding: 40px 20px;
+            margin-top: -80px; /* Sesuaikan dengan padding-top body */
         }
         #hero h2 {
             font-size: 3em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #fff; /* Pastikan teks terlihat di atas gambar */
         }
         #hero p {
             font-size: 1.2em;
@@ -121,7 +139,7 @@
 
         /* Section Styles */
         section {
-            padding: 40px 0;
+            padding: 60px 0; /* Padding lebih besar */
             background-color: #fff;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -149,6 +167,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .section-content .item:hover {
+            transform: translateY(-5px); /* Efek melayang saat hover */
         }
         .section-content .item img {
             max-width: 100%;
@@ -236,6 +258,12 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Menyesuaikan padding body untuk perangkat kecil */
+            }
+            header {
+                padding: 0.5rem 0;
+            }
             header .logo, header nav {
                 float: none;
                 text-align: center;
@@ -246,6 +274,9 @@
             header li {
                 display: block;
                 padding: 8px 0;
+            }
+            #hero {
+                margin-top: -100px;
             }
             #hero h2 {
                 font-size: 2em;
@@ -276,9 +307,9 @@
             <div class="logo">
                 <h1><a href="index.html">YAYASAN PENJAGA ANAK</a></h1>
             </div>
-            <nav>
+            <nav class="floating-nav">
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#tentang-kami">Tentang Kami</a></li>
                     <li><a href="#program-kami">Program Kami</a></li>
                     <li><a href="#dampak-kami">Dampak Kami</a></li>
@@ -445,7 +476,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.529267026743!2d106.8241088147743!3d-6.17511009552174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d3422d0b7b%3A0x8f7d9c6e3d2c7b5a!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1625478901234!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.380482483834!2d106.8227129147699!3d-6.208763995511854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f417f7b2e88f%3A0x6b87d21c4b1a4a4b!2sMonas%20(Monumen%20Nasional)!5e0!3m2!1sen!2sid!4v1614742416922!5m2!1sen!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -453,7 +484,7 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="index.html">Beranda</a> |
+                <a href="#beranda">Beranda</a> |
                 <a href="#tentang-kami">Tentang Kami</a> |
                 <a href="#program-kami">Program</a> |
                 <a href="#dampak-kami">Dampak</a> |
@@ -462,34 +493,22 @@
                 <a href="#">Kebijakan Privasi</a>
             </div>
             <div class="social-icons" style="margin-top: 15px;">
-                <a href="#"><img src="https://via.placeholder.com/24x24?text=FB" alt="Facebook"></a>
-                <a href="#"><img src="https://via.placeholder.com/24x24?text=IG" alt="Instagram"></a>
-                <a href="#"><img src="https://via.placeholder.com/24x24?text=TW" alt="Twitter"></a>
-                <a href="#"><img src="https://via.placeholder.com/24x24?text=LI" alt="LinkedIn"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24/3b5998/ffffff?text=f" alt="Facebook"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24/e1306c/ffffff?text=i" alt="Instagram"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24/1da1f2/ffffff?text=t" alt="Twitter"></a>
+                <a href="#"><img src="https://via.placeholder.com/24x24/0e76a8/ffffff?text=in" alt="LinkedIn"></a>
             </div>
-            <p style="margin-top: 20px;">&copy; 2023 Yayasan Penjaga Anak-Anak. Hak Cipta Dilindungi.</p>
+            <p style="margin-top: 20px;">© 2023 Yayasan Penjaga Anak-Anak. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
     <script>
         function showProgramDetail(programId) {
             alert('Anda mengklik detail program ' + programId + '. Dalam implementasi nyata, ini akan mengarahkan ke halaman detail program atau menampilkan modal.');
-            // window.location.href = 'program-detail.html?id=' + programId; // Example for actual navigation
         }
 
-        // Example for sticky header (CSS already does most of it, but JS can add class for effects)
-        window.onscroll = function() {myFunction()};
-
-        var header = document.querySelector("header");
-        var sticky = header.offsetTop;
-
-        function myFunction() {
-          if (window.pageYOffset > sticky) {
-            header.classList.add("sticky"); // Add a class for potential styling changes on scroll
-          } else {
-            header.classList.remove("sticky");
-          }
-        }
+        // Tidak perlu lagi fungsi JavaScript untuk sticky header karena sudah menggunakan 'position: fixed'
+        // Namun, jika Anda ingin menambahkan efek lain saat scroll, Anda bisa menggunakan event listener
     </script>
 </body>
 </html>
